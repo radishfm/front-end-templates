@@ -1,0 +1,92 @@
+html{
+    height: 100%;
+}
+body{
+    height: 30%;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-burger, .main-menu{
+    width: 200px;
+}
+.main-menu{
+    color: transparent;
+    transition: .3s ease-in;    
+}
+.main-menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+.main-menu ul li{
+    padding: 0 10px;
+    margin: 0;
+    line-height: 2em;    
+}
+.main-menu ul li a{
+    color: inherit;
+}
+.main-menu ul li:first-of-type{
+    /*padding-left: 0;*/
+}
+.main-menu ul li:last-of-type{
+    /*padding-right: 0;*/
+}
+.nav-burger__checkbox {
+    display: none;
+}
+.nav-bu rger__checkbox:checked + .nav-burger {
+    background-image: url("../img/icon-cross.svg");
+}
+.nav-burger__checkbox:checked ~ .main-menu {
+    /*display: block;*/
+    color: greenyellow;    
+}
+.nav-burger__checkbox:checked ~ .main-menu ul li{
+    background-color: #4583d8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.nav-burger__checkbox:checked ~ .nav-burger .bar{
+    background-color: transparent;
+    box-shadow: none;
+}
+.nav-burger__checkbox:checked ~ .nav-burger .bar::before{
+    transform: rotate(45deg);
+    top:0;
+}
+.nav-burger__checkbox:checked ~ .nav-burger .bar::after{
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar, .bar::before, .bar::after{
+    background-color: white;
+    width: 60px;
+    height: 10px;
+    border-radius: 100px;
+    position: absolute;
+    transition: .3s ease-in;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+.bar::before, .bar::after{
+    content: '';
+}
+.bar::before{
+    top:-20px;
+}
+.bar::after{
+    top:20px;
+}
